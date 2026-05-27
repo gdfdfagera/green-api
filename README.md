@@ -57,6 +57,13 @@ Copy `.env.example` → `.env` if needed (the defaults work out of the box):
 | `GREEN_API_BASE_URL` | `https://api.green-api.com` | API base URL (for a self-hosted instance) |
 | `GREEN_API_TIMEOUT_MS` | `15000` | Outgoing request timeout |
 
+## Deployment (Render)
+
+The repo ships a `render.yaml` blueprint. On [Render](https://render.com):
+**New → Blueprint → connect this repository**. Render reads `render.yaml`, builds the
+Docker image and exposes a public HTTPS URL. The `PORT` variable is provided by Render
+automatically and read by the app. Health checks hit `/health`.
+
 ## How to use
 
 1. In the GREEN-API console create an instance on a free developer account.

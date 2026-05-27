@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: green-api-playground
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: GREEN_API_BASE_URL
+        value: https://api.green-api.com
+      - key: GREEN_API_TIMEOUT_MS
+        value: "15000"
