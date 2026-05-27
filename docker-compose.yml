@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    image: green-api-playground:latest
+    container_name: green-api-playground
+    ports:
+      - "${PORT:-3000}:3000"
+    environment:
+      PORT: 3000
+      GREEN_API_BASE_URL: ${GREEN_API_BASE_URL:-https://api.green-api.com}
+      GREEN_API_TIMEOUT_MS: ${GREEN_API_TIMEOUT_MS:-15000}
+    restart: unless-stopped

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GREEN-API · Playground</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%2319c37d'/%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <header class="topbar">
+      <span class="dot"></span>
+      <h1>GREEN-API Playground</h1>
+    </header>
+
+    <main class="layout">
+      <section class="controls">
+        <div class="field">
+          <label for="idInstance">idInstance</label>
+          <input id="idInstance" type="text" inputmode="numeric" placeholder="1101000001" autocomplete="off" />
+        </div>
+
+        <div class="field">
+          <label for="apiTokenInstance">ApiTokenInstance</label>
+          <div class="secret">
+            <input id="apiTokenInstance" type="password" placeholder="d75b3a66374942c5b3c019c698abc2067e151558acbd412345" autocomplete="off" />
+            <button type="button" id="toggleToken" class="toggle" aria-label="Показать токен" title="Показать / скрыть">👁</button>
+          </div>
+        </div>
+
+        <button class="btn" data-method="getSettings">getSettings</button>
+        <button class="btn" data-method="getStateInstance">getStateInstance</button>
+
+        <div class="group">
+          <div class="field">
+            <label for="msgPhone">Телефон (sendMessage)</label>
+            <input id="msgPhone" type="text" inputmode="numeric" placeholder="77771234567" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="message">Сообщение</label>
+            <textarea id="message" rows="2" placeholder="Hello World!"></textarea>
+          </div>
+          <button class="btn" data-method="sendMessage">sendMessage</button>
+        </div>
+
+        <div class="group">
+          <div class="field">
+            <label for="filePhone">Телефон (sendFileByUrl)</label>
+            <input id="filePhone" type="text" inputmode="numeric" placeholder="77771234567" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="urlFile">URL файла</label>
+            <input id="urlFile" type="url" placeholder="https://my.site.com/img/horse.png" autocomplete="off" />
+          </div>
+          <button class="btn" data-method="sendFileByUrl">sendFileByUrl</button>
+        </div>
+      </section>
+
+      <section class="response">
+        <div class="response-head">
+          <span>Ответ:</span>
+          <span id="status" class="status" aria-live="polite"></span>
+        </div>
+        <textarea id="output" readonly spellcheck="false" placeholder="Ответ метода появится здесь…"></textarea>
+      </section>
+    </main>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
