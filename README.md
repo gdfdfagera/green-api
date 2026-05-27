@@ -1,5 +1,9 @@
 # GREEN-API Playground
 
+[![CI](https://github.com/gdfdfagera/green-api/actions/workflows/ci.yml/badge.svg)](https://github.com/gdfdfagera/green-api/actions/workflows/ci.yml)
+
+**Live demo:** https://green-api-playground.onrender.com
+
 An HTML page plus a Node.js/TypeScript backend that calls the [GREEN-API](https://green-api.com)
 methods: `getSettings`, `getStateInstance`, `sendMessage`, `sendFileByUrl`.
 
