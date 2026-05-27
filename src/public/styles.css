@@ -161,6 +161,27 @@ textarea:focus {
   font-weight: 600;
 }
 
+.response-head-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.link-btn {
+  font: inherit;
+  font-size: 12px;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.link-btn:hover {
+  color: var(--text);
+}
+
 .status {
   font-size: 12px;
   font-weight: 600;

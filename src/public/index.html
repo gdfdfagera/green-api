@@ -62,7 +62,10 @@
       <section class="response">
         <div class="response-head">
           <span>Ответ:</span>
-          <span id="status" class="status" aria-live="polite"></span>
+          <span class="response-head-right">
+            <span id="status" class="status" aria-live="polite"></span>
+            <button type="button" id="clearOutput" class="link-btn">Очистить</button>
+          </span>
         </div>
         <textarea id="output" readonly spellcheck="false" placeholder="Ответ метода появится здесь…"></textarea>
       </section>

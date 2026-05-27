@@ -79,6 +79,14 @@ document.querySelectorAll('.btn[data-method]').forEach((btn) => {
   btn.addEventListener('click', () => callMethod(btn.dataset.method, btn));
 });
 
+const clearOutput = $('clearOutput');
+if (clearOutput) {
+  clearOutput.addEventListener('click', () => {
+    output.value = '';
+    setStatus(undefined);
+  });
+}
+
 const toggleToken = $('toggleToken');
 if (toggleToken) {
   toggleToken.addEventListener('click', () => {

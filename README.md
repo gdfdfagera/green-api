@@ -3,8 +3,6 @@
 An HTML page plus a Node.js/TypeScript backend that calls the [GREEN-API](https://green-api.com)
 methods: `getSettings`, `getStateInstance`, `sendMessage`, `sendFileByUrl`.
 
-Test assignment for the **Lead Golang / NodeJS Developer** position.
-
 ## What's inside
 
 | Layer | Technologies |
@@ -13,6 +11,8 @@ Test assignment for the **Lead Golang / NodeJS Developer** position.
 | Backend | Node.js 20, TypeScript, Express — a thin proxy to GREEN-API |
 | Validation | `zod`: validates `idInstance` / `apiTokenInstance`, normalizes a phone number into a `chatId` (`77771234567@c.us`) |
 | Reliability | request timeouts, single error handler (`400` validation / `502` upstream), non-JSON responses wrapped into a JSON envelope, graceful shutdown, healthcheck |
+| Security | `helmet` security headers (incl. CSP), per-IP rate limiting on `/api`, masked token field |
+| CI | GitHub Actions running lint + test + build on every push |
 | Tests | Vitest + Supertest (validation + route integration with mocked `fetch`) |
 | Deployment | Multi-stage `Dockerfile` (non-root, healthcheck) + `docker-compose.yml` |
 
